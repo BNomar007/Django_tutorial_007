@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from .models import Article
 
@@ -18,10 +19,19 @@ def article_search_view(request):
     return render(request, 'articles/search.html', context=context)
 
 
-
+@login_required
 def article_create_view(request):
-    print(request.POST)
+    # print(request.POST)
     context = {}
+    if request.method == 'POST':
+        title = request.POST.get('title')
+        content = request.POST.get('content')
+        print(f'title: {title}, content: {content}')
+        article_object = Article.objects.create(title=title, content=content)
+
+        context['object'] = article_object
+        context['created'] = True
+    
     return render(request, 'articles/create.html', context=context)
 
 
