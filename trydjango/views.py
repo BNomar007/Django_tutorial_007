@@ -5,13 +5,11 @@ import random
 
 def home_view(Request, *args, **kwargs):
 
-    random_id = random.randint(1, 7)
-    
+    random_id = random.randint(1, 7)  
     # from the dabase
     article_obj = Article.objects.get(id=random_id)
 
     article_queryset = Article.objects.all()
-
     context = {
         'object_list' : article_queryset,
         'object': article_obj,
@@ -19,7 +17,6 @@ def home_view(Request, *args, **kwargs):
         'id': article_obj.id,
         'content': article_obj.content
     }
-
     # django template
 
     # first way to do it
@@ -31,6 +28,4 @@ def home_view(Request, *args, **kwargs):
     tmpl.string = tmpl.render(context=context)
     
     '''
-
-
     return HttpResponse(HTML_STRING)

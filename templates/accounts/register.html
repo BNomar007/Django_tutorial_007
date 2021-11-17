@@ -8,13 +8,13 @@
     <form method='POST'>
         {% csrf_token %}
         {{ form.as_p }}
-            <button style='margin-top: 10px;' type='submit'>Login</button>
-            <p>You don't have an account?<a href='/register'>Register</a></p>
+        <button style='margin-top: 10px;' type='submit'>Register</button>
+        <p>Already have an account?<a href='/login'>Login</a></p>
     </form>
 </div>
 
 {% else %}
-    <p style='color:green'>You're already logged in, Would you like to <a href='/logout'>logout</a></p>
+    <p style='color:green'>You're already logged in and cannot register, Would you like to <a href='/logout'>logout</a></p>
 {% endif %}
 
 {% endblock content %}
