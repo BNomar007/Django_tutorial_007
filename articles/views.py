@@ -1,22 +1,15 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.http import Http404
-from .models import Article
+from .models import Article, ArticleManager
 from .forms import ArticleForm
 
 
 def article_search_view(request):
-    query_dict = request.GET # this is a dictionary
-    # query = query_dict.get('q') # base.html <input type='text' name='q' />
-    try:
-        query = int(query_dict.get('q'))
-    except:
-        query = None
-    article_obj = None
-    if query is not None:
-        article_obj = Article.objects.get(id=query)
+    query = request.GET.get('q') 
+    qs = Article.objects.search(query=query)
     context = {
-        'object': article_obj,
+        'object_list': qs
         }
     return render(request, 'articles/search.html', context=context)
 
