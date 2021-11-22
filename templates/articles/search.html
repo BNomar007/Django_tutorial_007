@@ -4,6 +4,7 @@
     {% if object %}
         <h1>{{ object.title }}</h1>
         <h3>{{ object.content }}</h3>
+        <h3>{{ object.get_absolute_url }}</h3>
     {% endif %}
 
 {% endblock content %}
