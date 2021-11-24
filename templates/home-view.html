@@ -3,8 +3,8 @@
 {% block content %}
     <h1>{{object.title}} (id: {{id}})</h1>
     <h3>{{content}}</h3>
-    <a href='{% url "article-create" %}'>Create article</a>
-    <a href='{% url "article-detail" slug="hello-world" %}'>Hello world article</a>
+    <a href='{% url "articles:create" %}'>Create article</a>
+    <a href='{% url "articles:detail" slug="hello-world" %}'>Hello world article</a>
     <ul>
         {% for x in object_list %}
             {% if x.title %}
