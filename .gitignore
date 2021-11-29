@@ -1,2 +1,6 @@
+
+staticfiles-cdn/
 .env
 bin/
+
+__pycache__/

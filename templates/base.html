@@ -1,19 +1,28 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
         <title>raulgane site</title>
+        <script src="https://unpkg.com/htmx.org@1.6.1"></script>
+        <link rel='stylesheet' href='{% static "/recipes/recipes-htmx.css" %}' />
+        
     </head>
 
     <body>
         <h1>Hello my friends</h1>
-            <form action='/articles' method='GET'>
-                <input type='text' name='q' />
-                <input type='submit' />
-            </form>
+        {% static "recipes/recipes-htmx.css" %}
+            {% include 'search/search-form.html' %}
         {% block content %}
         {% endblock content %}
-        <h2>End of the content</h2>
+
+        <h2>End of the page</h2>
         <a href='/login'>Login</a>
         <a href='/logout'>Logout</a>
     </body>
+
+    <script>
+        document.body.addEventListener('htmx:configRequest', (event)=>{   //adding csrf_token everytime we use htmx
+            event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}'
+        })
+    </script>
 </html>

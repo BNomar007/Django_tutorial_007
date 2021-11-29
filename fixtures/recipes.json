@@ -1,0 +1,227 @@
+[
+{
+    "model": "recipes.recipe",
+    "pk": 1,
+    "fields": {
+        "user": 1,
+        "name": "grilled chicken",
+        "description": "This is my first grilled chicken tacos",
+        "directions": "",
+        "timestamp": "2021-11-22T16:10:16.483Z",
+        "updated": "2021-11-24T10:55:15.027Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipe",
+    "pk": 2,
+    "fields": {
+        "user": 1,
+        "name": "tacos",
+        "description": "this is just a test",
+        "directions": "this is the directions",
+        "timestamp": "2021-11-23T14:08:57.327Z",
+        "updated": "2021-11-25T08:08:39.119Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipe",
+    "pk": 3,
+    "fields": {
+        "user": 1,
+        "name": "sea fruit pizza",
+        "description": "this is an Italian sea fruit pizza that I made a few days ago.",
+        "directions": "1 package regular active dry yeast\r\n1/2 cup warm water (105°F to 115°F)\r\n1 1/4 to 1 1/2 cups Gold Medal™ all-purpose flour\r\n1 teaspoon vegetable oil\r\n1/2 teaspoon salt\r\n1/4 teaspoon sugar",
+        "timestamp": "2021-11-24T11:02:45.979Z",
+        "updated": "2021-11-24T17:52:07.279Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipe",
+    "pk": 4,
+    "fields": {
+        "user": 1,
+        "name": "grilled chicken 2",
+        "description": "this is a description",
+        "directions": "this is a directions",
+        "timestamp": "2021-11-24T12:02:48.308Z",
+        "updated": "2021-11-25T07:57:11.166Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipe",
+    "pk": 5,
+    "fields": {
+        "user": 1,
+        "name": "pasta",
+        "description": "this is a description",
+        "directions": "this is direction",
+        "timestamp": "2021-11-24T15:06:04.284Z",
+        "updated": "2021-11-25T07:56:17.107Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipeingredient",
+    "pk": 1,
+    "fields": {
+        "recipe": 1,
+        "name": "grilled chicken",
+        "description": "",
+        "quantity": "1.5",
+        "quantity_as_float": null,
+        "unit": "kg",
+        "directions": "left-right-right-right-left",
+        "timestamp": "2021-11-22T16:21:07.263Z",
+        "updated": "2021-11-23T14:01:35.283Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipeingredient",
+    "pk": 2,
+    "fields": {
+        "recipe": 2,
+        "name": "tacos ingredients",
+        "description": "a test",
+        "quantity": "3 1/2",
+        "quantity_as_float": 3.5,
+        "unit": "kg",
+        "directions": "",
+        "timestamp": "2021-11-23T14:08:57.337Z",
+        "updated": "2021-11-25T08:08:39.262Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipeingredient",
+    "pk": 3,
+    "fields": {
+        "recipe": 1,
+        "name": "new recipe",
+        "description": "",
+        "quantity": "32",
+        "quantity_as_float": 32.0,
+        "unit": "kg",
+        "directions": "",
+        "timestamp": "2021-11-24T06:26:08.503Z",
+        "updated": "2021-11-24T10:55:15.038Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipeingredient",
+    "pk": 4,
+    "fields": {
+        "recipe": 3,
+        "name": "Dry yeast",
+        "description": "",
+        "quantity": "2",
+        "quantity_as_float": 2.0,
+        "unit": "kg",
+        "directions": "",
+        "timestamp": "2021-11-24T11:29:32.298Z",
+        "updated": "2021-11-24T17:52:07.445Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipeingredient",
+    "pk": 5,
+    "fields": {
+        "recipe": 3,
+        "name": "Gold Medal™ all-purpose flour",
+        "description": "",
+        "quantity": "1 1/2",
+        "quantity_as_float": 1.5,
+        "unit": "kg",
+        "directions": "",
+        "timestamp": "2021-11-24T11:44:05.143Z",
+        "updated": "2021-11-24T17:52:07.550Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipeingredient",
+    "pk": 6,
+    "fields": {
+        "recipe": 3,
+        "name": "vegetable oil",
+        "description": "",
+        "quantity": "1/4",
+        "quantity_as_float": 0.25,
+        "unit": "kg",
+        "directions": "",
+        "timestamp": "2021-11-24T11:44:39.792Z",
+        "updated": "2021-11-24T17:52:07.649Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipeingredient",
+    "pk": 7,
+    "fields": {
+        "recipe": 5,
+        "name": "flour",
+        "description": null,
+        "quantity": "1.5",
+        "quantity_as_float": 1.5,
+        "unit": "kg",
+        "directions": null,
+        "timestamp": "2021-11-25T07:38:29.379Z",
+        "updated": "2021-11-25T07:56:17.232Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipeingredient",
+    "pk": 8,
+    "fields": {
+        "recipe": 5,
+        "name": "eggs",
+        "description": null,
+        "quantity": "2",
+        "quantity_as_float": 2.0,
+        "unit": "kg",
+        "directions": null,
+        "timestamp": "2021-11-25T07:40:02.569Z",
+        "updated": "2021-11-25T07:56:17.326Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipeingredient",
+    "pk": 9,
+    "fields": {
+        "recipe": 4,
+        "name": "flour",
+        "description": null,
+        "quantity": "1",
+        "quantity_as_float": 1.0,
+        "unit": "kg",
+        "directions": null,
+        "timestamp": "2021-11-25T07:57:11.260Z",
+        "updated": "2021-11-25T07:57:11.260Z",
+        "active": true
+    }
+},
+{
+    "model": "recipes.recipeingredient",
+    "pk": 10,
+    "fields": {
+        "recipe": 2,
+        "name": "pico salsa",
+        "description": null,
+        "quantity": "20",
+        "quantity_as_float": 20.0,
+        "unit": "ounces",
+        "directions": null,
+        "timestamp": "2021-11-25T08:08:39.355Z",
+        "updated": "2021-11-25T08:08:39.356Z",
+        "active": true
+    }
+}
+]

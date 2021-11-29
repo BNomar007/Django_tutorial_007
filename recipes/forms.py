@@ -18,7 +18,7 @@ class RecipeForm(forms.ModelForm):
             new_data = {
                 'placeholder': f'Recipe {str(field)}',
                 'rows': 5,
-                'class': 'form-control'
+                'class': 'form-control',
             }
             self.fields[str(field)].label = ''
             self.fields[str(field)].widget.attrs.update(new_data)
@@ -28,3 +28,13 @@ class RecipeIngredientForm(forms.ModelForm):
     class Meta:
         model = RecipeIngredient
         fields = ['name', 'quantity', 'unit']
+    
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field in self.fields:
+            new_data = {
+                'placeholder': str(field),
+                'class': 'form-control'
+            }
+            self.fields[str(field)].label = ''
+            self.fields[str(field)].widget.attrs.update(new_data)
