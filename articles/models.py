@@ -6,6 +6,9 @@ from django.utils.text import slugify
 from django.db.models.signals import pre_save, post_save
 from django.urls import reverse
 
+from meals.utils import generate_meal_queue_totals
+from meals.models import (meal_added, meal_removed)
+
 User = settings.AUTH_USER_MODEL
 
 class ArticleQuerySet(models.QuerySet):
@@ -77,3 +80,18 @@ def article_post_save(sender, instance, created, *args, **kwargs):
         slugify_instance_title(instance, save=True)
         
 post_save.connect(article_post_save, sender=Article)
+
+
+def meal_added_rec(sender, instance, *args, **kwargs):
+    # print('Addded', args, kwargs)
+    user = instance.user
+    data = generate_meal_queue_totals(user)
+    print(data)
+
+meal_added.connect(meal_added_rec)
+
+
+def meal_removed_rec(*args, **kwargs):
+    print('Removed', args, kwargs)
+
+meal_removed.connect(meal_removed_rec)
